@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERSEE — Live Entertainment Creative Forum & Show Production</title>
+  <meta name="description" content="EVERSEE — Producing emotions, creating memories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"><div class="cursor__circle"></div></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__left">
+      <a href="#work" class="nav__link" data-cursor-hover>WORK</a>
+      <a href="#services" class="nav__link" data-cursor-hover>SERVICES</a>
+      <a href="#about" class="nav__link" data-cursor-hover>ABOUT</a>
+      <a href="#bts" class="nav__link" data-cursor-hover>BTS</a>
+    </div>
+    <a href="#" class="nav__logo" data-cursor-hover>EVERSEE</a>
+    <div class="nav__right">
+      <a href="#contact" class="nav__cta" data-cursor-hover>LET'S TALK</a>
+      <button class="nav__menu-btn" id="menuBtn" data-cursor-hover>
+        <span id="menuText">MENU</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-screen Menu -->
+  <div class="menu" id="menu">
+    <div class="menu__inner">
+      <nav class="menu__nav">
+        <a href="#work" class="menu__link" data-cursor-hover><span class="menu__link-num">01</span><span class="menu__link-text">Work</span></a>
+        <a href="#services" class="menu__link" data-cursor-hover><span class="menu__link-num">02</span><span class="menu__link-text">Services</span></a>
+        <a href="#about" class="menu__link" data-cursor-hover><span class="menu__link-num">03</span><span class="menu__link-text">About</span></a>
+        <a href="#bts" class="menu__link" data-cursor-hover><span class="menu__link-num">04</span><span class="menu__link-text">Behind The Scenes</span></a>
+      </nav>
+      <div class="menu__side">
+        <div class="menu__side-links">
+          <a href="#" class="menu__sec-link" data-cursor-hover>Home</a>
+          <a href="#contact" class="menu__sec-link" data-cursor-hover>Contact</a>
+        </div>
+        <div class="menu__socials">
+          <a href="https://www.instagram.com/eversee_official" target="_blank" rel="noopener" data-cursor-hover>Instagram</a>
+          <a href="https://www.facebook.com/everseeforum" target="_blank" rel="noopener" data-cursor-hover>Facebook</a>
+          <a href="https://www.linkedin.com/company/eversee-official" target="_blank" rel="noopener" data-cursor-hover>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HERO — Full-screen video slideshow
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero__slides">
+      <!-- Slide 0 — intro -->
+      <div class="hero__slide hero__slide--active">
+        <video class="hero__slide-video" autoplay muted loop playsinline
+          poster="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&h=1080&fit=crop&auto=format&q=80">
+          <source src="https://assets.mixkit.co/videos/11942/11942-720.mp4" type="video/mp4">
+        </video>
+        <div class="hero__slide-overlay"></div>
+        <div class="hero__slide-content">
+          <h1 class="hero__slide-title hero__slide-title--main" data-split-text>WE LISTEN. WE CREATE.<br>WE DELIVER.</h1>
+          <a href="#work" class="hero__slide-cta" data-cursor-hover>[ EXPLORE MORE WORK ]</a>
+        </div>
+      </div>
+      <!-- Slide 1 -->
+      <div class="hero__slide">
+        <video class="hero__slide-video" muted loop playsinline preload="metadata"
+          poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop&auto=format&q=80">
+          <source src="https://assets.mixkit.co/videos/4026/4026-720.mp4" type="video/mp4">
+        </video>
+        <div class="hero__slide-overlay"></div>
+        <div class="hero__slide-content">
+          <h2 class="hero__slide-title">CREATIVE FORUM</h2>
+          <p class="hero__slide-sub">The Ultimate Conference</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="hero__slide">
+        <video class="hero__slide-video" muted loop playsinline preload="metadata"
+          poster="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1920&h=1080&fit=crop&auto=format&q=80">
+          <source src="https://assets.mixkit.co/videos/14084/14084-720.mp4" type="video/mp4">
+        </video>
+        <div class="hero__slide-overlay"></div>
+        <div class="hero__slide-content">
+          <h2 class="hero__slide-title">LIVE EXPERIENCES</h2>
+          <p class="hero__slide-sub">Producing Emotions</p>
+        </div>
+      </div>
+    </div>
+    <!-- Back arrow -->
+    <button class="hero__back" id="heroPrev" data-cursor-hover>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M4 10l6-6M4 10l6 6" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+    <!-- Pagination -->
+    <div class="hero__pag">
+      <span class="hero__pag-current">01</span>
+      <span class="hero__pag-sep">|</span>
+      <button class="hero__pag-play" id="heroPlayPause" data-cursor-hover>
+        <svg class="hero__pag-icon--play" width="12" height="14" viewBox="0 0 12 14" fill="none"><polygon points="1,1 11,7 1,13" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+        <svg class="hero__pag-icon--pause" width="12" height="14" viewBox="0 0 12 14" fill="none" style="display:none"><line x1="3" y1="1" x2="3" y2="13" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="1" x2="9" y2="13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <span class="hero__pag-sep">|</span>
+      <span class="hero__pag-total">03</span>
+    </div>
+    <!-- Noise -->
+    <div class="hero__noise"></div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">WORK</span><span class="divider__plus">+</span></div>
+
+  <!-- ============================================
+       SERVICES — Full-screen
+       ============================================ -->
+  <section class="fullsection" id="services">
+    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
+    <div class="fullsection__overlay"></div>
+    <div class="fullsection__content" data-reveal>
+      <h2 class="fullsection__title">CREATIVE<br>PRODUCTION.<br>FLAWLESS<br>EXECUTION.</h2>
+      <a href="#" class="fullsection__link" data-cursor-hover>[ STUFF WE'RE REALLY GOOD AT ]</a>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">OUR SERVICES</span><span class="divider__plus">+</span></div>
+
+  <!-- ============================================
+       ABOUT — Full-screen
+       ============================================ -->
+  <section class="fullsection" id="about">
+    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
+    <div class="fullsection__overlay"></div>
+    <div class="fullsection__content" data-reveal>
+      <h2 class="fullsection__title">NOT JUST AN EVENT.<br>IT'S AN EXPERIENCE<br>THEY NEVER FORGET.</h2>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">ABOUT US</span><span class="divider__plus">+</span></div>
+
+  <!-- ============================================
+       BTS — Full-screen title + photo strip
+       ============================================ -->
+  <section class="bts" id="bts">
+    <div class="bts__hero" data-reveal>
+      <h2 class="bts__title">WE PROBABLY<br>SHOULDN'T<br>POST THIS...</h2>
+    </div>
+    <div class="bts__strip" id="btsSlider">
+      <div class="bts__track" id="btsTrack">
+        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
+        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
+        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
+        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">BTS</span><span class="divider__plus">+</span></div>
+
+  <!-- ============================================
+       SHOWREEL — Full-screen
+       ============================================ -->
+  <section class="fullsection fullsection--reel" id="reel">
+    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
+    <div class="fullsection__overlay"></div>
+    <div class="fullsection__content" data-reveal>
+      <h2 class="fullsection__title">THE HYPE<br>IS REEL.</h2>
+      <div class="fullsection__play" data-cursor-hover>
+        <svg width="24" height="28" viewBox="0 0 24 28" fill="none"><polygon points="2,1 22,14 2,27" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CLIENTS
+       ============================================ -->
+  <section class="clients" id="clients">
+    <div class="clients__inner" data-reveal>
+      <h2 class="clients__title">BRANDS WHO<br>SWIPED RIGHT.</h2>
+      <p class="clients__sub">Got a vision? We've got two decades of experience and unlimited creative energy.</p>
+      <div class="clients__logos">
+        <div class="clients__logo"><span>DUBAI EXPO</span></div>
+        <div class="clients__logo"><span>CIRQUE</span></div>
+        <div class="clients__logo"><span>FASHION WEEK</span></div>
+        <div class="clients__logo"><span>MINISTRY</span></div>
+        <div class="clients__logo"><span>LIVE NATION</span></div>
+        <div class="clients__logo"><span>RED BULL</span></div>
+        <div class="clients__logo"><span>ABSOLUT</span></div>
+        <div class="clients__logo"><span>BMW</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="footer__label">OUR ADDRESS</p>
+          <p class="footer__text">EVERSEE Productions<br>International</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__label">GET IN TOUCH</p>
+          <a href="mailto:info@eversee.com" class="footer__text footer__text--link" data-cursor-hover>info@eversee.com</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__label">SOCIALS</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/eversee_official" target="_blank" rel="noopener" data-cursor-hover>Instagram</a>
+            <a href="https://www.facebook.com/everseeforum" target="_blank" rel="noopener" data-cursor-hover>Facebook</a>
+            <a href="https://www.linkedin.com/company/eversee-official" target="_blank" rel="noopener" data-cursor-hover>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; EVERSEE, 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
