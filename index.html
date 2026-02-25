@@ -3,222 +3,523 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVERSEE — Live Entertainment Creative Forum & Show Production</title>
-  <meta name="description" content="EVERSEE — Producing emotions, creating memories.">
+  <title>EVERSEE Creative Forum — Berlin, June 2026</title>
+  <meta name="description" content="A 3-day B2B brainstorm for live entertainment. Keynotes, speed matching, brainstorm sessions. 50-100 professionals. Berlin, June 2026.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EVERSEE Creative Forum — Berlin, June 2026">
+  <meta property="og:description" content="3-day brainstorm forum at the intersection of live entertainment technology and creative direction. 50+ industry leaders. Application-based.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:url" content="https://eversee.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EVERSEE Creative Forum — Berlin, June 2026">
+  <meta name="twitter:description" content="3-day brainstorm forum at the intersection of live entertainment technology and creative direction. 50+ industry leaders. Application-based.">
+  <meta name="twitter:image" content="og-image.jpg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lenis -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- ANALYTICS: uncomment and replace IDs before deploy
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+  <!-- LinkedIn Insight Tag: paste your tag here -->
 </head>
 <body>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"><div class="cursor__circle"></div></div>
 
-  <!-- Navigation -->
+  <!-- ============================================
+       1. NAVIGATION
+       ============================================ -->
   <header class="nav" id="nav">
-    <div class="nav__left">
-      <a href="#work" class="nav__link" data-cursor-hover>WORK</a>
-      <a href="#services" class="nav__link" data-cursor-hover>SERVICES</a>
-      <a href="#about" class="nav__link" data-cursor-hover>ABOUT</a>
-      <a href="#bts" class="nav__link" data-cursor-hover>BTS</a>
-    </div>
-    <a href="#" class="nav__logo" data-cursor-hover>EVERSEE</a>
-    <div class="nav__right">
-      <a href="#contact" class="nav__cta" data-cursor-hover>LET'S TALK</a>
-      <button class="nav__menu-btn" id="menuBtn" data-cursor-hover>
-        <span id="menuText">MENU</span>
-      </button>
-    </div>
+    <a href="#hero" class="nav__logo" data-cursor-hover>EVERSEE</a>
+    <nav class="nav__links">
+      <a href="#program" class="nav__link" data-cursor-hover>Program</a>
+      <a href="#speakers" class="nav__link" data-cursor-hover>Who's Coming</a>
+      <a href="#tickets" class="nav__link" data-cursor-hover>Tickets</a>
+      <a href="#faq" class="nav__link" data-cursor-hover>FAQ</a>
+    </nav>
+    <a href="#tickets" class="nav__cta" data-cursor-hover>Get Your Badge</a>
+    <button class="nav__burger" id="navBurger" aria-label="Menu" data-cursor-hover>
+      <span></span><span></span>
+    </button>
   </header>
 
-  <!-- Full-screen Menu -->
-  <div class="menu" id="menu">
-    <div class="menu__inner">
-      <nav class="menu__nav">
-        <a href="#work" class="menu__link" data-cursor-hover><span class="menu__link-num">01</span><span class="menu__link-text">Work</span></a>
-        <a href="#services" class="menu__link" data-cursor-hover><span class="menu__link-num">02</span><span class="menu__link-text">Services</span></a>
-        <a href="#about" class="menu__link" data-cursor-hover><span class="menu__link-num">03</span><span class="menu__link-text">About</span></a>
-        <a href="#bts" class="menu__link" data-cursor-hover><span class="menu__link-num">04</span><span class="menu__link-text">Behind The Scenes</span></a>
-      </nav>
-      <div class="menu__side">
-        <div class="menu__side-links">
-          <a href="#" class="menu__sec-link" data-cursor-hover>Home</a>
-          <a href="#contact" class="menu__sec-link" data-cursor-hover>Contact</a>
-        </div>
-        <div class="menu__socials">
-          <a href="https://www.instagram.com/eversee_official" target="_blank" rel="noopener" data-cursor-hover>Instagram</a>
-          <a href="https://www.facebook.com/everseeforum" target="_blank" rel="noopener" data-cursor-hover>Facebook</a>
-          <a href="https://www.linkedin.com/company/eversee-official" target="_blank" rel="noopener" data-cursor-hover>LinkedIn</a>
-        </div>
-      </div>
-    </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="#program" data-cursor-hover>Program</a>
+      <a href="#speakers" data-cursor-hover>Who's Coming</a>
+      <a href="#tickets" data-cursor-hover>Tickets</a>
+      <a href="#faq" data-cursor-hover>FAQ</a>
+      <a href="#tickets" class="mobile-menu__cta" data-cursor-hover>Get Your Badge</a>
+    </nav>
   </div>
 
   <!-- ============================================
-       HERO — Full-screen video slideshow
+       2. HERO
        ============================================ -->
   <section class="hero" id="hero">
-    <div class="hero__slides">
-      <!-- Slide 0 — intro -->
-      <div class="hero__slide hero__slide--active">
-        <video class="hero__slide-video" autoplay muted loop playsinline
-          poster="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&h=1080&fit=crop&auto=format&q=80">
-          <source src="https://assets.mixkit.co/videos/11942/11942-720.mp4" type="video/mp4">
-        </video>
-        <div class="hero__slide-overlay"></div>
-        <div class="hero__slide-content">
-          <h1 class="hero__slide-title hero__slide-title--main" data-split-text>WE LISTEN. WE CREATE.<br>WE DELIVER.</h1>
-          <a href="#work" class="hero__slide-cta" data-cursor-hover>[ EXPLORE MORE WORK ]</a>
+    <div class="hero__video-wrap">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="eversee_5.mp4" type="video/mp4">
+      </video>
+      <!-- Fallback: if video doesn't load, CSS background covers -->
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-reveal>Berlin · June 2026</p>
+      <h1 class="hero__title" data-reveal>EVERSEE<br><em>Creative Forum</em></h1>
+      <p class="hero__tagline" data-reveal>50 decision-makers. 3 days. Zero PowerPoint.</p>
+      <div class="hero__countdown" id="countdown" data-reveal>
+        <div class="countdown__item"><span class="countdown__num" id="cdDays">--</span><span class="countdown__label">Days</span></div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item"><span class="countdown__num" id="cdHours">--</span><span class="countdown__label">Hours</span></div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item"><span class="countdown__num" id="cdMins">--</span><span class="countdown__label">Min</span></div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item"><span class="countdown__num" id="cdSecs">--</span><span class="countdown__label">Sec</span></div>
+      </div>
+      <a href="#tickets" class="btn btn--accent hero__cta" data-cursor-hover data-reveal>Get Your Badge</a>
+      <p class="hero__early" data-reveal>Early Bird pricing until April 1</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. ABOUT
+       ============================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid" data-reveal>
+        <div class="about__block">
+          <h3 class="about__label">For Creatives</h3>
+          <p class="about__text">10 technologies you didn't know existed. Every conversation is a potential tool for your next project.</p>
+        </div>
+        <div class="about__block">
+          <h3 class="about__label">For Tech</h3>
+          <p class="about__text">10 live conversations with Europe's top show directors and producers in one hour. Insights your marketing team would pay research agencies tens of thousands for.</p>
         </div>
       </div>
-      <!-- Slide 1 -->
-      <div class="hero__slide">
-        <video class="hero__slide-video" muted loop playsinline preload="metadata"
-          poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop&auto=format&q=80">
-          <source src="https://assets.mixkit.co/videos/4026/4026-720.mp4" type="video/mp4">
-        </video>
-        <div class="hero__slide-overlay"></div>
-        <div class="hero__slide-content">
-          <h2 class="hero__slide-title">CREATIVE FORUM</h2>
-          <p class="hero__slide-sub">The Ultimate Conference</p>
+      <div class="about__stats" data-reveal>
+        <div class="about__stat"><span class="about__stat-num">3</span><span class="about__stat-label">days</span></div>
+        <div class="about__stat-sep"></div>
+        <div class="about__stat"><span class="about__stat-num">50–100</span><span class="about__stat-label">professionals</span></div>
+        <div class="about__stat-sep"></div>
+        <div class="about__stat"><span class="about__stat-num">10</span><span class="about__stat-label">speed matching rounds</span></div>
+        <div class="about__stat-sep"></div>
+        <div class="about__stat"><span class="about__stat-num">2</span><span class="about__stat-label">world-class shows</span></div>
+      </div>
+      <p class="about__curated" data-reveal>Application-based event. We curate every participant to ensure the right mix of creative and technology leaders.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. PROGRAM
+       ============================================ -->
+  <section class="program" id="program">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Program</h2>
+      <div class="timeline">
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__marker">
+            <span class="timeline__num">1</span>
+            <span class="timeline__line"></span>
+          </div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__name">DISCOVER</h3>
+              <span class="timeline__date">Thursday, 10:00–17:00</span>
+            </div>
+            <ul class="timeline__list">
+              <li>Opening keynotes — creative & tech perspectives</li>
+              <li>Lightning talks — "My boldest idea" × "Our hidden tech"</li>
+              <li>Panel: "Briefing the Impossible"</li>
+              <li>Speed Matching — 10 rounds × 5 min</li>
+            </ul>
+            <div class="timeline__evening">
+              <span class="timeline__evening-label">Evening</span>
+              <p>Group dinner + Cirque du Soleil — Alizée show</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__marker">
+            <span class="timeline__num">2</span>
+            <span class="timeline__line"></span>
+          </div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__name">CREATE</h3>
+              <span class="timeline__date">Friday, 10:00–17:00</span>
+            </div>
+            <ul class="timeline__list">
+              <li>Mixed-team brainstorm sessions — real-world creative briefs</li>
+              <li>Group presentations & audience vote</li>
+              <li>Open Mic: "What's Next?" — propose collaborations on the spot</li>
+            </ul>
+            <div class="timeline__evening">
+              <span class="timeline__evening-label">Evening</span>
+              <p>Group dinner + Friedrichstadt-Palast show</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__marker">
+            <span class="timeline__num">3</span>
+          </div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__name">VISION</h3>
+              <span class="timeline__date">Saturday, 10:00–15:00</span>
+            </div>
+            <ul class="timeline__list">
+              <li>Forum takeaways & key insights</li>
+              <li>Future formats: EVERSEE workshops & hackathons</li>
+              <li>Open discussion — what's next, where, how often</li>
+            </ul>
+            <div class="timeline__evening">
+              <span class="timeline__evening-label">Afternoon</span>
+              <p>Backstage tour — Friedrichstadt-Palast</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. SPEED MATCHING
+       ============================================ -->
+  <section class="matching" id="matching">
+    <div class="container">
+      <div class="matching__inner" data-reveal>
+        <h2 class="matching__title">Speed Matching</h2>
+        <p class="matching__headline">10 live conversations with industry leaders in 1 hour.</p>
+        <p class="matching__sub">No booths, no brochures. You sit across from a decision-maker and have their undivided attention for 5 minutes.</p>
+        <div class="matching__grid">
+          <div class="matching__block">
+            <h4 class="matching__label">For Tech</h4>
+            <p>A focus group with Europe's top show directors, circus creators, and ceremony designers. Hear firsthand what they need, what frustrates them, what they wish existed.</p>
+          </div>
+          <div class="matching__block">
+            <h4 class="matching__label">For Creatives</h4>
+            <p>A personal technology showroom. 10 solutions you didn't know existed — each one a potential tool for your next project.</p>
+          </div>
         </div>
       </div>
-      <!-- Slide 2 -->
-      <div class="hero__slide">
-        <video class="hero__slide-video" muted loop playsinline preload="metadata"
-          poster="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1920&h=1080&fit=crop&auto=format&q=80">
-          <source src="https://assets.mixkit.co/videos/14084/14084-720.mp4" type="video/mp4">
-        </video>
-        <div class="hero__slide-overlay"></div>
-        <div class="hero__slide-content">
-          <h2 class="hero__slide-title">LIVE EXPERIENCES</h2>
-          <p class="hero__slide-sub">Producing Emotions</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. WHO'S COMING (social proof)
+       ============================================ -->
+  <section class="speakers" id="speakers">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Who's Coming</h2>
+      <p class="speakers__sub" data-reveal>First confirmed participants</p>
+
+      <!-- Creatives -->
+      <div class="speakers__grid" data-reveal>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Enno Uhde</h4>
+          <p class="speaker-card__role">Ceremony Director — FIFA, UEFA</p>
+          <p class="speaker-card__city">Germany</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Fabrice Becker</h4>
+          <p class="speaker-card__role">Artistic Director — Cirque du Soleil Alizée</p>
+          <p class="speaker-card__city">France</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Sebastian Hückst</h4>
+          <p class="speaker-card__role">Artistic Director — Friedrichstadt-Palast</p>
+          <p class="speaker-card__city">Berlin</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Daniele Finzi Pasca</h4>
+          <p class="speaker-card__role">Theatre & Circus Director</p>
+          <p class="speaker-card__city">Italy / Switzerland</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">James Tanabe</h4>
+          <p class="speaker-card__role">Director — Dragone</p>
+          <p class="speaker-card__city">International</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Pavel Kotov</h4>
+          <p class="speaker-card__role">Casting Director — Cirque du Soleil</p>
+          <p class="speaker-card__city">Montreal</p>
         </div>
       </div>
-    </div>
-    <!-- Back arrow -->
-    <button class="hero__back" id="heroPrev" data-cursor-hover>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M4 10l6-6M4 10l6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-    </button>
-    <!-- Pagination -->
-    <div class="hero__pag">
-      <span class="hero__pag-current">01</span>
-      <span class="hero__pag-sep">|</span>
-      <button class="hero__pag-play" id="heroPlayPause" data-cursor-hover>
-        <svg class="hero__pag-icon--play" width="12" height="14" viewBox="0 0 12 14" fill="none"><polygon points="1,1 11,7 1,13" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
-        <svg class="hero__pag-icon--pause" width="12" height="14" viewBox="0 0 12 14" fill="none" style="display:none"><line x1="3" y1="1" x2="3" y2="13" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="1" x2="9" y2="13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-      <span class="hero__pag-sep">|</span>
-      <span class="hero__pag-total">03</span>
-    </div>
-    <!-- Noise -->
-    <div class="hero__noise"></div>
-  </section>
 
-  <!-- Divider -->
-  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">WORK</span><span class="divider__plus">+</span></div>
+      <!-- Tech logos -->
+      <p class="speakers__tech-label" data-reveal>Technology companies</p>
+      <div class="speakers__logos" data-reveal>
+        <div class="speakers__logo"><span>Panasonic Connect</span></div>
+        <div class="speakers__logo"><span>Robe</span></div>
+        <div class="speakers__logo"><span>AVA</span></div>
+        <div class="speakers__logo"><span>Artistic Licence</span></div>
+        <div class="speakers__logo"><span>Anolis</span></div>
+        <div class="speakers__logo"><span>ISE</span></div>
+        <div class="speakers__logo"><span>AVIXA</span></div>
+        <div class="speakers__logo"><span>InfoComm</span></div>
+        <div class="speakers__logo"><span>Pufferfish</span></div>
+        <div class="speakers__logo"><span>Garriets</span></div>
+        <div class="speakers__logo"><span>Slide Media</span></div>
+        <div class="speakers__logo"><span>2Sync.io</span></div>
+      </div>
 
-  <!-- ============================================
-       SERVICES — Full-screen
-       ============================================ -->
-  <section class="fullsection" id="services">
-    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
-    <div class="fullsection__overlay"></div>
-    <div class="fullsection__content" data-reveal>
-      <h2 class="fullsection__title">CREATIVE<br>PRODUCTION.<br>FLAWLESS<br>EXECUTION.</h2>
-      <a href="#" class="fullsection__link" data-cursor-hover>[ STUFF WE'RE REALLY GOOD AT ]</a>
+      <a href="#tickets" class="btn btn--outline speakers__cta" data-cursor-hover data-reveal>Join them</a>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">OUR SERVICES</span><span class="divider__plus">+</span></div>
-
   <!-- ============================================
-       ABOUT — Full-screen
+       7. TICKETS
        ============================================ -->
-  <section class="fullsection" id="about">
-    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
-    <div class="fullsection__overlay"></div>
-    <div class="fullsection__content" data-reveal>
-      <h2 class="fullsection__title">NOT JUST AN EVENT.<br>IT'S AN EXPERIENCE<br>THEY NEVER FORGET.</h2>
-    </div>
-  </section>
+  <section class="tickets" id="tickets">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Tickets</h2>
 
-  <!-- Divider -->
-  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">ABOUT US</span><span class="divider__plus">+</span></div>
+      <div class="tickets__early" data-reveal>
+        <div class="pulse"></div>
+        Early Bird prices until April 1, 2026
+      </div>
 
-  <!-- ============================================
-       BTS — Full-screen title + photo strip
-       ============================================ -->
-  <section class="bts" id="bts">
-    <div class="bts__hero" data-reveal>
-      <h2 class="bts__title">WE PROBABLY<br>SHOULDN'T<br>POST THIS...</h2>
-    </div>
-    <div class="bts__strip" id="btsSlider">
-      <div class="bts__track" id="btsTrack">
-        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
-        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
-        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
-        <div class="bts__slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=750&fit=crop&auto=format&q=80" alt="BTS" loading="lazy"></div>
+      <!-- Creative -->
+      <p class="tickets__segment-label" data-reveal>For Creators & Artists</p>
+      <div class="tickets__grid tickets__grid--two" data-reveal>
+
+        <div class="ticket-card">
+          <p class="ticket-card__eyebrow">Creative</p>
+          <h3 class="ticket-card__title">Essential</h3>
+          <p class="ticket-card__days">2 days</p>
+          <div class="ticket-card__price"><sup>€</sup>290</div>
+          <p class="ticket-card__note">Early Bird · Regular €390</p>
+          <div class="ticket-card__divider"></div>
+          <ul class="ticket-card__features">
+            <li class="ticket-card__feature ticket-card__feature--on">Brainstorm sessions, lightning talks & speed matching — 2 days of pure content</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — 10 meetings with top industry professionals</li>
+            <li class="ticket-card__feature">Coffee & refreshments</li>
+          </ul>
+          <!-- TODO: replace mailto with Stripe Payment Link / Tito / Eventbrite when ready -->
+          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Creative%20Essential" class="btn btn--outline ticket-card__cta" data-cursor-hover>Get ticket</a>
+        </div>
+
+        <div class="ticket-card ticket-card--featured">
+          <div class="ticket-card__badge">Recommended</div>
+          <p class="ticket-card__eyebrow">Creative</p>
+          <h3 class="ticket-card__title">Full</h3>
+          <p class="ticket-card__days">3 days</p>
+          <div class="ticket-card__price"><sup>€</sup>590</div>
+          <p class="ticket-card__note">Early Bird · Regular €790</p>
+          <div class="ticket-card__divider"></div>
+          <ul class="ticket-card__features">
+            <li class="ticket-card__feature ticket-card__feature--on">Brainstorm sessions, lightning talks & strategy session — 3 days</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">7-min presentation slot in front of 50+ directors & producers</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — 10 curated meetings with top professionals</li>
+            <li class="ticket-card__feature ticket-card__feature--on">2 group dinners</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Cirque du Soleil — Alizée show</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Friedrichstadt-Palast show</li>
+            <li class="ticket-card__feature">Coffee & refreshments</li>
+          </ul>
+          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Creative%20Full" class="btn btn--accent ticket-card__cta" data-cursor-hover>Get ticket</a>
+        </div>
+
+      </div>
+
+      <!-- Immersive -->
+      <p class="tickets__segment-label" data-reveal>For Companies, Agencies & Producers</p>
+      <div class="tickets__grid tickets__grid--three" data-reveal>
+
+        <div class="ticket-card">
+          <p class="ticket-card__eyebrow">Immersive</p>
+          <h3 class="ticket-card__title">Standard</h3>
+          <p class="ticket-card__days">3 days · per person</p>
+          <div class="ticket-card__price"><sup>€</sup>690</div>
+          <p class="ticket-card__note">Early Bird · Regular €890</p>
+          <div class="ticket-card__divider"></div>
+          <ul class="ticket-card__features">
+            <li class="ticket-card__feature ticket-card__feature--on">Brainstorm sessions, lightning talks & strategy session — 3 days</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — direct access to 10 pre-selected creatives</li>
+            <li class="ticket-card__feature ticket-card__feature--on">2 group dinners</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Cirque du Soleil — Alizée show</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Friedrichstadt-Palast show</li>
+            <li class="ticket-card__feature">Coffee & refreshments</li>
+          </ul>
+          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Immersive%20Standard" class="btn btn--outline ticket-card__cta" data-cursor-hover>Get ticket</a>
+        </div>
+
+        <div class="ticket-card ticket-card--featured">
+          <div class="ticket-card__badge">Max ROI</div>
+          <p class="ticket-card__eyebrow">Immersive</p>
+          <h3 class="ticket-card__title">Full</h3>
+          <p class="ticket-card__days">3 days · per person</p>
+          <div class="ticket-card__price"><sup>€</sup>890</div>
+          <p class="ticket-card__note">Early Bird · Regular €1 190</p>
+          <div class="ticket-card__divider"></div>
+          <ul class="ticket-card__features">
+            <li class="ticket-card__feature ticket-card__feature--on">Everything in Immersive Standard</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">7-min presentation slot in front of 50+ directors, producers & art directors</li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Exclusive backstage tour — Friedrichstadt-Palast <span class="tag">Max 40</span></li>
+          </ul>
+          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Immersive%20Full" class="btn btn--accent ticket-card__cta" data-cursor-hover>Get ticket</a>
+        </div>
+
+        <div class="ticket-card">
+          <p class="ticket-card__eyebrow">Corporate</p>
+          <h3 class="ticket-card__title">Custom</h3>
+          <p class="ticket-card__days">3 days · team package</p>
+          <div class="ticket-card__price ticket-card__price--custom">On request</div>
+          <p class="ticket-card__note">For teams of 3+</p>
+          <div class="ticket-card__divider"></div>
+          <ul class="ticket-card__features">
+            <li class="ticket-card__feature ticket-card__feature--on">Flexible ticket composition for your team</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Brand visibility options</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Priority Speed Matching curation</li>
+            <li class="ticket-card__feature">Dedicated account manager</li>
+          </ul>
+          <a href="mailto:info@eversee.com?subject=EVERSEE%20Corporate%20Package" class="btn btn--outline ticket-card__cta" data-cursor-hover>Contact us</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="divider"><span class="divider__plus">+</span><span class="divider__label">BTS</span><span class="divider__plus">+</span></div>
-
   <!-- ============================================
-       SHOWREEL — Full-screen
+       8. EMAIL CAPTURE
        ============================================ -->
-  <section class="fullsection fullsection--reel" id="reel">
-    <img class="fullsection__bg" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&h=1080&fit=crop&auto=format&q=80" alt="" loading="lazy" data-parallax-y>
-    <div class="fullsection__overlay"></div>
-    <div class="fullsection__content" data-reveal>
-      <h2 class="fullsection__title">THE HYPE<br>IS REEL.</h2>
-      <div class="fullsection__play" data-cursor-hover>
-        <svg width="24" height="28" viewBox="0 0 24 28" fill="none"><polygon points="2,1 22,14 2,27" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+  <section class="waitlist" id="waitlist">
+    <div class="container">
+      <div class="waitlist__inner" data-reveal>
+        <h2 class="waitlist__title">Not ready to buy?</h2>
+        <p class="waitlist__sub">Join the waitlist. We'll send you updates on speakers, venue, and early bird deadlines.</p>
+        <!-- TODO: replace with Mailchimp / ConvertKit / Buttondown embed when ready -->
+        <form class="waitlist__form" action="mailto:info@eversee.com?subject=EVERSEE%20Waitlist" method="POST" enctype="text/plain">
+          <input type="email" class="waitlist__input" placeholder="Your email" required>
+          <button type="submit" class="btn btn--accent waitlist__btn" data-cursor-hover>Join waitlist</button>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       CLIENTS
+       9. FAQ
        ============================================ -->
-  <section class="clients" id="clients">
-    <div class="clients__inner" data-reveal>
-      <h2 class="clients__title">BRANDS WHO<br>SWIPED RIGHT.</h2>
-      <p class="clients__sub">Got a vision? We've got two decades of experience and unlimited creative energy.</p>
-      <div class="clients__logos">
-        <div class="clients__logo"><span>DUBAI EXPO</span></div>
-        <div class="clients__logo"><span>CIRQUE</span></div>
-        <div class="clients__logo"><span>FASHION WEEK</span></div>
-        <div class="clients__logo"><span>MINISTRY</span></div>
-        <div class="clients__logo"><span>LIVE NATION</span></div>
-        <div class="clients__logo"><span>RED BULL</span></div>
-        <div class="clients__logo"><span>ABSOLUT</span></div>
-        <div class="clients__logo"><span>BMW</span></div>
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title" data-reveal>FAQ</h2>
+      <div class="faq__list" data-reveal>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>Where does it take place?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>Central Berlin. Exact venue will be announced in March. The space includes a main hall and breakout rooms for group work — think loft or coworking, not a convention center.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>What language is the event in?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>English. All sessions, materials, and facilitation are in English.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>What's included in the ticket?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>It depends on the package. All tickets include brainstorm sessions, lightning talks, and speed matching. Full and Immersive packages add group dinners, shows (Alizée and Friedrichstadt-Palast), and a presentation slot. See the <a href="#tickets">Tickets</a> section for details.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>Can I get a refund?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>Full refund up to 30 days before the event. 50% refund up to 14 days before. After that, tickets are non-refundable but transferable to a colleague.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>How do I get there?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>Berlin is served by BER airport with direct flights from most European cities. The venue is accessible by public transport. We'll share detailed directions closer to the event.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>Group discounts?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>Yes — our Corporate package is designed for teams of 3+. <a href="mailto:info@eversee.com?subject=EVERSEE%20Corporate%20Package">Contact us</a> for custom pricing and brand visibility options.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>Is this a conference?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>No. It's an application-based brainstorm forum. No keynote marathons, no expo booths. You work in mixed teams, solve real creative briefs, and meet decision-makers in structured speed matching sessions.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>Who attends?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>Show directors, circus creators, ceremony designers, artistic directors — alongside technology companies building tools for live entertainment. We review applications to ensure the right mix of tech and creative professionals.</p></div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       FOOTER
+       10. FOOTER
        ============================================ -->
-  <footer class="footer" id="contact">
-    <div class="footer__inner">
-      <div class="footer__cols">
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
         <div class="footer__col">
-          <p class="footer__label">OUR ADDRESS</p>
-          <p class="footer__text">EVERSEE Productions<br>International</p>
+          <p class="footer__logo">EVERSEE</p>
+          <p class="footer__copy">&copy; EVERSEE, 2026</p>
         </div>
         <div class="footer__col">
-          <p class="footer__label">GET IN TOUCH</p>
-          <a href="mailto:info@eversee.com" class="footer__text footer__text--link" data-cursor-hover>info@eversee.com</a>
+          <p class="footer__label">Get in touch</p>
+          <a href="mailto:info@eversee.com" class="footer__link" data-cursor-hover>info@eversee.com</a>
         </div>
         <div class="footer__col">
-          <p class="footer__label">SOCIALS</p>
+          <p class="footer__label">Follow us</p>
           <div class="footer__socials">
             <a href="https://www.instagram.com/eversee_official" target="_blank" rel="noopener" data-cursor-hover>Instagram</a>
             <a href="https://www.facebook.com/everseeforum" target="_blank" rel="noopener" data-cursor-hover>Facebook</a>
@@ -226,12 +527,10 @@
           </div>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; EVERSEE, 2026</p>
-      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
