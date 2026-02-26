@@ -1,0 +1,14 @@
+# Binary documents
+*.pdf
+*.docx
+*.xlsx
+*.pages
+
+# Media
+videos/
+eversee-preview/
+carousel/
+*.mp4
+
+# OS
+.DS_Store
