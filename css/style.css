@@ -554,6 +554,11 @@ img { display: block; max-width: 100%; }
   color: var(--accent);
   font-weight: 400;
 }
+.timeline__optional {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 300;
+}
 
 @media (max-width: 768px) {
   .program { padding: 80px 0; }
