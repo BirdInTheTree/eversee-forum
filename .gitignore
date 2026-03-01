@@ -9,6 +9,8 @@ videos/
 eversee-preview/
 carousel/
 *.mp4
+*.mov
+*.rtfd
 
 # OS
 .DS_Store

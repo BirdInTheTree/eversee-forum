@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERSEE Creative Forum — Packages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: 'Barlow Condensed', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      padding: 44px 48px 36px;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FF2883, #c45aff, transparent 70%);
+    }
+
+    /* --- Header --- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .header__logo {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      color: #FF2883;
+      text-transform: uppercase;
+    }
+
+    .header__info {
+      text-align: right;
+      font-size: 18px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    /* --- Title --- */
+    .title {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    .early-bird {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid rgba(255,40,131,0.3);
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #FF2883;
+      margin-bottom: 28px;
+    }
+
+    /* --- Section label --- */
+    .segment {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    /* --- Package cards --- */
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+    .cards--two { grid-template-columns: 1fr 1fr; }
+    .cards--three { grid-template-columns: 1fr 1fr 1fr; }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 14px;
+      padding: 24px 22px 22px;
+      position: relative;
+    }
+
+    .card--featured {
+      border-color: #FF2883;
+      border-width: 2px;
+      background: #ffffff;
+    }
+
+    .card__badge {
+      position: absolute;
+      top: -1px;
+      right: 20px;
+      background: linear-gradient(135deg, #FF2883, #c45aff);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .card__eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .card__name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .card__days {
+      font-size: 16px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .card__price {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+      line-height: 1;
+    }
+    .card__price sup {
+      font-size: 24px;
+      font-weight: 600;
+      vertical-align: super;
+    }
+    .card__price--custom {
+      font-size: 28px;
+      color: #666;
+    }
+
+    .card__note {
+      font-size: 15px;
+      color: #bbb;
+      margin-bottom: 12px;
+    }
+
+    .card__divider {
+      height: 1px;
+      background: #e8e8e8;
+      margin-bottom: 12px;
+    }
+
+    .card__features {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .card__features li {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #555;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .card__features li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+
+    .card__features li.highlight {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .card__tag {
+      display: inline-block;
+      padding: 2px 7px;
+      background: rgba(255,40,131,0.1);
+      border-radius: 4px;
+      font-size: 12px;
+      color: #FF2883;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
+    /* --- CTA button --- */
+    .card__cta {
+      display: block;
+      text-align: center;
+      padding: 12px 0;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .card__cta--outline {
+      border: 1px solid #ddd;
+      background: transparent;
+      color: #555;
+    }
+
+    .card__cta--accent {
+      background: linear-gradient(135deg, #FF2883, #4C24C1);
+      border: none;
+      color: #fff;
+    }
+
+    /* --- Page 2 header (smaller, just logo + section) --- */
+    .page2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .page2-header__logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #FF2883;
+      text-transform: uppercase;
+    }
+
+    .page2-header__info {
+      font-size: 16px;
+      color: #888;
+    }
+
+    /* --- Footer --- */
+    .footer {
+      position: absolute;
+      bottom: 36px;
+      left: 48px;
+      right: 48px;
+      padding-top: 14px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .footer__contact {
+      font-size: 16px;
+      color: #999;
+      line-height: 1.7;
+    }
+    .footer__contact a {
+      color: #FF2883;
+      text-decoration: underline;
+    }
+
+    .footer__tagline {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ccc;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== PAGE 1: Creators & Artists ========== -->
+  <div class="page">
+
+    <div class="header">
+      <span class="header__logo">EVERSEE</span>
+      <div class="header__info">
+        Creative Forum<br>
+        Berlin · June 2026<br>
+        3 days · Invite-only
+      </div>
+    </div>
+
+    <h1 class="title">Packages & Pricing</h1>
+    <p class="subtitle">Brainstorm sessions, lightning talks, speed matching, and real creative briefs — all in one room.</p>
+    <div class="early-bird">Early Bird pricing until April 1, 2026</div>
+
+    <p class="segment">For Creators & Artists</p>
+    <div class="cards cards--two">
+
+      <div class="card">
+        <p class="card__eyebrow">Creative</p>
+        <h3 class="card__name">Essential</h3>
+        <p class="card__days">2 days (Thu–Fri)</p>
+        <div class="card__price"><sup>€</sup>290</div>
+        <p class="card__note">Early Bird · Regular €390</p>
+        <div class="card__divider"></div>
+        <ul class="card__features">
+          <li>Brainstorm sessions, lightning talks & speed matching — 2 days of pure content</li>
+          <li>Speed Matching — 10 meetings with top industry professionals</li>
+          <li>Coffee & refreshments</li>
+        </ul>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Creative%20Essential&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20a%20Creative%20Essential%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="card__cta card__cta--outline">Get Ticket →</a>
+      </div>
+
+      <div class="card card--featured">
+        <div class="card__badge">Recommended</div>
+        <p class="card__eyebrow">Creative</p>
+        <h3 class="card__name">Full</h3>
+        <p class="card__days">3 days (Thu–Sat)</p>
+        <div class="card__price"><sup>€</sup>590</div>
+        <p class="card__note">Early Bird · Regular €790</p>
+        <div class="card__divider"></div>
+        <ul class="card__features">
+          <li>Brainstorm sessions, lightning talks & strategy session — 3 days</li>
+          <li class="highlight">7-min presentation slot in front of top directors & producers</li>
+          <li>Speed Matching — 10 curated meetings with top professionals</li>
+          <li>Coffee & refreshments</li>
+        </ul>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Creative%20Full&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20a%20Creative%20Full%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="card__cta card__cta--accent">Get Ticket →</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========== PAGE 2: Companies, Agencies & Producers ========== -->
+  <div class="page">
+
+    <div class="header">
+      <span class="header__logo">EVERSEE</span>
+      <div class="header__info">
+        Creative Forum<br>
+        Berlin · June 2026<br>
+        3 days · Invite-only
+      </div>
+    </div>
+
+    <h1 class="title">Packages & Pricing</h1>
+    <p class="subtitle">Brainstorm sessions, lightning talks, speed matching, and real creative briefs — all in one room.</p>
+    <div class="early-bird">Early Bird pricing until April 1, 2026</div>
+
+    <p class="segment">For Companies, Agencies & Producers</p>
+    <div class="cards cards--three">
+
+      <div class="card">
+        <p class="card__eyebrow">Immersive</p>
+        <h3 class="card__name">Standard</h3>
+        <p class="card__days">3 days · per person</p>
+        <div class="card__price"><sup>€</sup>690</div>
+        <p class="card__note">Early Bird · Regular €890</p>
+        <div class="card__divider"></div>
+        <ul class="card__features">
+          <li>Brainstorm sessions, lightning talks & strategy session — 3 days</li>
+          <li>Speed Matching — direct access to 10 pre-selected creatives</li>
+          <li>Coffee & refreshments</li>
+        </ul>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Immersive%20Standard&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20an%20Immersive%20Standard%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="card__cta card__cta--outline">Get Ticket →</a>
+      </div>
+
+      <div class="card card--featured">
+        <div class="card__badge">Max ROI</div>
+        <p class="card__eyebrow">Immersive</p>
+        <h3 class="card__name">Full</h3>
+        <p class="card__days">3 days · per person</p>
+        <div class="card__price"><sup>€</sup>890</div>
+        <p class="card__note">Early Bird · Regular €1,190</p>
+        <div class="card__divider"></div>
+        <ul class="card__features">
+          <li>Everything in Immersive Standard</li>
+          <li class="highlight">7-min presentation slot in front of directors, producers & art directors</li>
+          <li class="highlight">Exclusive backstage tour — Friedrichstadt-Palast <span class="card__tag">Max 40</span></li>
+        </ul>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Immersive%20Full&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20an%20Immersive%20Full%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="card__cta card__cta--accent">Get Ticket →</a>
+      </div>
+
+      <div class="card">
+        <p class="card__eyebrow">Corporate</p>
+        <h3 class="card__name">Custom</h3>
+        <p class="card__days">3 days · team package</p>
+        <div class="card__price card__price--custom">On request</div>
+        <p class="card__note">For teams of 3+</p>
+        <div class="card__divider"></div>
+        <ul class="card__features">
+          <li>Flexible ticket composition for your team</li>
+          <li>Brand visibility options</li>
+          <li>Priority Speed Matching curation</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Corporate%20Package&body=Hi%2C%0A%0AWe're%20interested%20in%20a%20Corporate%20package%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0ACompany%3A%20%0ATeam%20size%3A%20%0A%0AThank%20you!" class="card__cta card__cta--outline">Contact Us →</a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer__contact">
+        <a href="mailto:info@eversee.com">info@eversee.com</a> · Instagram · Facebook · LinkedIn · eversee.com
+      </div>
+      <div class="footer__tagline">Where tech meets creative</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
