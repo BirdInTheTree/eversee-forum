@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVERSEE Creative Forum — Berlin, June 2026</title>
+  <title>EVERSEE Creative Summit — Berlin, June 2026</title>
   <meta name="description" content="An invite-only 3-day brainstorm for live entertainment creatives and technology leaders. Berlin, June 2026.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="EVERSEE Creative Forum — Berlin, June 2026">
-  <meta property="og:description" content="Invite-only brainstorm forum at the intersection of live entertainment technology and creative direction. Berlin, June 2026.">
+  <meta property="og:title" content="EVERSEE Creative Summit — Berlin, June 2026">
+  <meta property="og:description" content="Invite-only brainstorm summit at the intersection of live entertainment technology and creative direction. Berlin, June 2026.">
   <meta property="og:image" content="og-image.jpg">
   <meta property="og:url" content="https://eversee.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EVERSEE Creative Forum — Berlin, June 2026">
-  <meta name="twitter:description" content="Invite-only brainstorm forum at the intersection of live entertainment technology and creative direction. Berlin, June 2026.">
+  <meta name="twitter:title" content="EVERSEE Creative Summit — Berlin, June 2026">
+  <meta name="twitter:description" content="Invite-only brainstorm summit at the intersection of live entertainment technology and creative direction. Berlin, June 2026.">
   <meta name="twitter:image" content="og-image.jpg">
 
   <!-- Fonts -->
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260302">
 
   <!-- ANALYTICS: uncomment and replace IDs before deploy
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -84,10 +84,12 @@
       </video>
       <!-- Fallback: if video doesn't load, CSS background covers -->
       <div class="hero__overlay"></div>
+      <!-- Logo cover: hides the baked-in logo in top-right of video. Remove this div + .hero__logo-cover CSS to revert -->
+      <div class="hero__logo-cover"></div>
     </div>
     <div class="hero__content">
       <p class="hero__eyebrow" data-reveal>Berlin · June 2026</p>
-      <h1 class="hero__title" data-reveal>EVERSEE<br><em>Creative Forum</em></h1>
+      <h1 class="hero__title" data-reveal>EVERSEE<br><em>Creative Summit</em></h1>
       <p class="hero__tagline" data-reveal>Invite-only. 3 days. Zero PowerPoint.</p>
       <div class="hero__countdown" id="countdown" data-reveal>
         <div class="countdown__item"><span class="countdown__num" id="cdDays">--</span><span class="countdown__label">Days</span></div>
@@ -99,7 +101,7 @@
         <div class="countdown__item"><span class="countdown__num" id="cdSecs">--</span><span class="countdown__label">Sec</span></div>
       </div>
       <a href="#tickets" class="btn btn--accent hero__cta" data-cursor-hover data-reveal>Get Your Badge</a>
-      <p class="hero__early" data-reveal>Early Bird pricing until April 1</p>
+      <p class="hero__early" data-reveal>Early Bird pricing until April 30</p>
     </div>
   </section>
 
@@ -111,11 +113,11 @@
       <div class="about__grid" data-reveal>
         <div class="about__block">
           <h3 class="about__label">For Creatives</h3>
-          <p class="about__text">10 technologies you didn't know existed. Every conversation is a potential tool for your next project.</p>
+          <p class="about__text">Discover technologies you didn't know existed. Brainstorm with engineers who build them. Present your boldest ideas to people who can make them real.</p>
         </div>
         <div class="about__block">
           <h3 class="about__label">For Tech</h3>
-          <p class="about__text">10 live conversations with Europe's top show directors and producers in one hour. Insights your marketing team would pay research agencies tens of thousands for.</p>
+          <p class="about__text">Work side by side with Europe's top live entertainment creatives. Hear what they actually need — straight from the people who build the shows.</p>
         </div>
       </div>
       <div class="about__stats" data-reveal>
@@ -147,17 +149,17 @@
           <div class="timeline__content">
             <div class="timeline__header">
               <h3 class="timeline__name">DISCOVER</h3>
-              <span class="timeline__date">Thursday, 10:00–17:00</span>
+              <span class="timeline__date">09:00 – 16:45</span>
             </div>
             <ul class="timeline__list">
               <li>Opening keynotes — creative & tech perspectives</li>
-              <li>Lightning talks — "My boldest idea" × "Our hidden tech"</li>
+              <li>Lightning talks — creatives share ideas, tech reveals capabilities</li>
               <li>Panel: "Briefing the Impossible"</li>
               <li>Speed Matching — 10 rounds × 5 min</li>
             </ul>
             <div class="timeline__evening">
               <span class="timeline__evening-label">Evening</span>
-              <p>Cirque du Soleil — Alizée show <span class="timeline__optional">(tickets available separately)</span></p>
+              <p>Dinner + show — Alizée (Cirque du Soleil) or BLINDED by DELIGHT (Friedrichstadt-Palast) <span class="timeline__optional">(tickets available separately)</span></p>
             </div>
           </div>
         </div>
@@ -170,16 +172,16 @@
           <div class="timeline__content">
             <div class="timeline__header">
               <h3 class="timeline__name">CREATE</h3>
-              <span class="timeline__date">Friday, 10:00–17:00</span>
+              <span class="timeline__date">09:30 – 16:45</span>
             </div>
             <ul class="timeline__list">
               <li>Mixed-team brainstorm sessions — real-world creative briefs</li>
               <li>Group presentations & audience vote</li>
-              <li>Open Mic: "What's Next?" — propose collaborations on the spot</li>
+              <li>Brainstorm Debrief — honest feedback on the format and ideas</li>
             </ul>
             <div class="timeline__evening">
               <span class="timeline__evening-label">Evening</span>
-              <p>Friedrichstadt-Palast show <span class="timeline__optional">(tickets available separately)</span></p>
+              <p>Dinner + show + afterparty — Alizée (Cirque du Soleil) or BLINDED by DELIGHT (Friedrichstadt-Palast) <span class="timeline__optional">(tickets available separately)</span></p>
             </div>
           </div>
         </div>
@@ -191,12 +193,12 @@
           <div class="timeline__content">
             <div class="timeline__header">
               <h3 class="timeline__name">VISION</h3>
-              <span class="timeline__date">Saturday, 10:00–15:00</span>
+              <span class="timeline__date">09:30 – 13:30</span>
             </div>
             <ul class="timeline__list">
-              <li>Forum takeaways & key insights</li>
+              <li>Summit takeaways & key insights</li>
               <li>Future formats: EVERSEE workshops & hackathons</li>
-              <li>Open discussion — what's next, where, how often</li>
+              <li>Strategic discussion — trends, technology gaps, budgets</li>
             </ul>
             <div class="timeline__evening">
               <span class="timeline__evening-label">Afternoon</span>
@@ -221,7 +223,7 @@
         <div class="matching__grid">
           <div class="matching__block">
             <h4 class="matching__label">For Tech</h4>
-            <p>A focus group with Europe's top show directors, circus creators, and ceremony designers. Hear firsthand what they need, what frustrates them, what they wish existed.</p>
+            <p>A focus group with Europe's top live entertainment creatives. Hear firsthand what they need, what frustrates them, and what tools they wish existed.</p>
           </div>
           <div class="matching__block">
             <h4 class="matching__label">For Creatives</h4>
@@ -238,63 +240,37 @@
   <section class="speakers" id="speakers">
     <div class="container">
       <h2 class="section-title" data-reveal>Who's Coming</h2>
-      <p class="speakers__sub" data-reveal>First confirmed participants</p>
-
-      <!-- Creatives -->
       <div class="speakers__grid" data-reveal>
         <div class="speaker-card">
           <div class="speaker-card__photo"></div>
-          <h4 class="speaker-card__name">Enno Uhde</h4>
-          <p class="speaker-card__role">Ceremony Director — FIFA, UEFA</p>
-          <p class="speaker-card__city">Germany</p>
-        </div>
-        <div class="speaker-card">
-          <div class="speaker-card__photo"></div>
-          <h4 class="speaker-card__name">Fabrice Becker</h4>
-          <p class="speaker-card__role">Artistic Director — Cirque du Soleil Alizée</p>
-          <p class="speaker-card__city">France</p>
-        </div>
-        <div class="speaker-card">
-          <div class="speaker-card__photo"></div>
-          <h4 class="speaker-card__name">Sebastian Hückst</h4>
-          <p class="speaker-card__role">Artistic Director — Friedrichstadt-Palast</p>
-          <p class="speaker-card__city">Berlin</p>
-        </div>
-        <div class="speaker-card">
-          <div class="speaker-card__photo"></div>
-          <h4 class="speaker-card__name">Daniele Finzi Pasca</h4>
-          <p class="speaker-card__role">Theatre & Circus Director</p>
-          <p class="speaker-card__city">Italy / Switzerland</p>
-        </div>
-        <div class="speaker-card">
-          <div class="speaker-card__photo"></div>
-          <h4 class="speaker-card__name">James Tanabe</h4>
-          <p class="speaker-card__role">Director — Dragone</p>
-          <p class="speaker-card__city">International</p>
-        </div>
-        <div class="speaker-card">
-          <div class="speaker-card__photo"></div>
           <h4 class="speaker-card__name">Pavel Kotov</h4>
-          <p class="speaker-card__role">Casting Director — Cirque du Soleil</p>
-          <p class="speaker-card__city">Montreal</p>
+          <p class="speaker-card__role">Former Senior Casting Director at Cirque du Soleil / Chief Creative and Strategy</p>
         </div>
-      </div>
-
-      <!-- Tech logos -->
-      <p class="speakers__tech-label" data-reveal>Technology companies</p>
-      <div class="speakers__logos" data-reveal>
-        <div class="speakers__logo"><span>Panasonic Connect</span></div>
-        <div class="speakers__logo"><span>Robe</span></div>
-        <div class="speakers__logo"><span>AVA</span></div>
-        <div class="speakers__logo"><span>Artistic Licence</span></div>
-        <div class="speakers__logo"><span>Anolis</span></div>
-        <div class="speakers__logo"><span>ISE</span></div>
-        <div class="speakers__logo"><span>AVIXA</span></div>
-        <div class="speakers__logo"><span>InfoComm</span></div>
-        <div class="speakers__logo"><span>Pufferfish</span></div>
-        <div class="speakers__logo"><span>Garriets</span></div>
-        <div class="speakers__logo"><span>Slide Media</span></div>
-        <div class="speakers__logo"><span>2Sync.io</span></div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Matthew Jessner</h4>
+          <p class="speaker-card__role">Artistic Director, Creative Production Lecturer</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Yaroslavna Garmash</h4>
+          <p class="speaker-card__role">Director — Event & Creative Hackathons</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Enno Uhde</h4>
+          <p class="speaker-card__role">Director — Stage and TV Productions, Shows, Events</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Boris Verkhovski</h4>
+          <p class="speaker-card__role">Former Director of Performance Design and Development, Cirque du Soleil</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-card__photo"></div>
+          <h4 class="speaker-card__name">Gabriel Dubé-Dupuis</h4>
+          <p class="speaker-card__role">Creation & Artistic Director</p>
+        </div>
       </div>
 
       <a href="#tickets" class="btn btn--outline speakers__cta" data-cursor-hover data-reveal>Join them</a>
@@ -318,14 +294,13 @@
       <div class="tickets__grid tickets__grid--one" data-reveal>
 
         <div class="ticket-card">
-          <p class="ticket-card__eyebrow">Creative</p>
-          <h3 class="ticket-card__title">Forum</h3>
+          <h3 class="ticket-card__title">Creative Summit</h3>
           <p class="ticket-card__days">3 days</p>
-          <div class="ticket-card__price"><sup>€</sup>290</div>
-          <p class="ticket-card__note">Early Bird · Regular €390</p>
+          <div class="ticket-card__price"><sup>€</sup>300</div>
+          <p class="ticket-card__note">Early Bird · Regular €400</p>
           <div class="ticket-card__divider"></div>
           <ul class="ticket-card__features">
-            <li class="ticket-card__feature ticket-card__feature--on">Keynotes, brainstorms, speed matching & strategy session — 3 days</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Keynotes, brainstorms & strategy session — 3 days</li>
             <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — 10 meetings with top industry professionals</li>
             <li class="ticket-card__feature ticket-card__feature--on">Coffee & refreshments</li>
           </ul>
@@ -333,16 +308,16 @@
           <div class="ticket-addons">
             <p class="ticket-addons__title">Enhance Your Experience</p>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Presentation Slot" data-price="200">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Presentation Slot</p>
                 <p class="ticket-addon__desc">7-min presentation in front of industry peers and potential partners</p>
               </div>
-              <div class="ticket-addon__price">+€150</div>
+              <div class="ticket-addon__price">+€200</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Berlin Dinners" data-price="100">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Berlin Dinners</p>
@@ -351,7 +326,7 @@
               <div class="ticket-addon__price">+€100</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Cirque du Soleil — Alizée" data-price="110">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Cirque du Soleil — Alizée</p>
@@ -360,7 +335,7 @@
               <div class="ticket-addon__price">+€110</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Friedrichstadt-Palast" data-price="90">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Friedrichstadt-Palast</p>
@@ -369,34 +344,46 @@
               <div class="ticket-addon__price">+€90</div>
             </div>
 
-            <div class="ticket-addon ticket-addon--bundle">
+            <div class="ticket-addon" data-name="Afterparty" data-price="90">
+              <div class="ticket-addon__check"></div>
+              <div class="ticket-addon__info">
+                <p class="ticket-addon__name">Afterparty</p>
+                <p class="ticket-addon__desc">Drinks & snacks included</p>
+              </div>
+              <div class="ticket-addon__price">+€90</div>
+            </div>
+
+            <div class="ticket-addon ticket-addon--bundle" data-name="Full Experience Bundle" data-price="490" data-bundle="true">
               <div class="ticket-addon__check">★</div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Full Experience Bundle <span class="ticket-addon__save">Save €100</span></p>
-                <p class="ticket-addon__desc">All of the above — presentation, dinners & both shows</p>
+                <p class="ticket-addon__desc">All of the above — presentation, dinners, both shows & afterparty</p>
               </div>
-              <div class="ticket-addon__price">+€350</div>
+              <div class="ticket-addon__price">+€490</div>
             </div>
           </div>
 
-          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Creative%20Forum&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20a%20Creative%20Forum%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="btn btn--accent ticket-card__cta" data-cursor-hover>Get ticket</a>
+          <div class="ticket-card__total">
+            <span class="ticket-card__total-label">Total</span>
+            <span class="ticket-card__total-amount">€300</span>
+          </div>
+          <button class="btn btn--accent ticket-card__cta" data-cursor-hover data-base="300" data-ticket="Creative Summit (Creators & Artists)">Get ticket</button>
         </div>
 
       </div>
 
       <!-- Companies -->
-      <p class="tickets__segment-label" data-reveal>For Companies, Agencies & Producers</p>
+      <p class="tickets__segment-label" data-reveal>For Companies & Agencies</p>
       <div class="tickets__grid tickets__grid--one" data-reveal>
 
         <div class="ticket-card">
-          <p class="ticket-card__eyebrow">Immersive</p>
-          <h3 class="ticket-card__title">Forum</h3>
+          <h3 class="ticket-card__title">Creative Summit</h3>
           <p class="ticket-card__days">3 days · per person</p>
-          <div class="ticket-card__price"><sup>€</sup>690</div>
-          <p class="ticket-card__note">Early Bird · Regular €890</p>
+          <div class="ticket-card__price"><sup>€</sup>700</div>
+          <p class="ticket-card__note">Early Bird · Regular €900</p>
           <div class="ticket-card__divider"></div>
           <ul class="ticket-card__features">
-            <li class="ticket-card__feature ticket-card__feature--on">Keynotes, brainstorms, speed matching & strategy session — 3 days</li>
+            <li class="ticket-card__feature ticket-card__feature--on">Keynotes, brainstorms & strategy session — 3 days</li>
             <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — direct access to 10 pre-selected creatives</li>
             <li class="ticket-card__feature ticket-card__feature--highlight">Backstage Tour — Friedrichstadt-Palast <span class="tag">Max 40</span></li>
             <li class="ticket-card__feature ticket-card__feature--on">Coffee & refreshments</li>
@@ -405,16 +392,16 @@
           <div class="ticket-addons">
             <p class="ticket-addons__title">Enhance Your Experience</p>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Presentation Slot" data-price="400">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Presentation Slot</p>
                 <p class="ticket-addon__desc">7-min demo in front of industry peers and potential partners</p>
               </div>
-              <div class="ticket-addon__price">+€250</div>
+              <div class="ticket-addon__price">+€400</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Berlin Dinners" data-price="100">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Berlin Dinners</p>
@@ -423,7 +410,7 @@
               <div class="ticket-addon__price">+€100</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Cirque du Soleil — Alizée" data-price="110">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Cirque du Soleil — Alizée</p>
@@ -432,7 +419,7 @@
               <div class="ticket-addon__price">+€110</div>
             </div>
 
-            <div class="ticket-addon">
+            <div class="ticket-addon" data-name="Friedrichstadt-Palast" data-price="90">
               <div class="ticket-addon__check"></div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Friedrichstadt-Palast</p>
@@ -441,17 +428,30 @@
               <div class="ticket-addon__price">+€90</div>
             </div>
 
-            <div class="ticket-addon ticket-addon--bundle">
+            <div class="ticket-addon" data-name="Afterparty" data-price="90">
+              <div class="ticket-addon__check"></div>
+              <div class="ticket-addon__info">
+                <p class="ticket-addon__name">Afterparty</p>
+                <p class="ticket-addon__desc">Drinks & snacks included</p>
+              </div>
+              <div class="ticket-addon__price">+€90</div>
+            </div>
+
+            <div class="ticket-addon ticket-addon--bundle" data-name="Full Experience Bundle" data-price="690" data-bundle="true">
               <div class="ticket-addon__check">★</div>
               <div class="ticket-addon__info">
                 <p class="ticket-addon__name">Full Experience Bundle <span class="ticket-addon__save">Save €100</span></p>
-                <p class="ticket-addon__desc">All of the above — presentation, dinners & both shows</p>
+                <p class="ticket-addon__desc">All of the above — presentation, dinners, both shows & afterparty</p>
               </div>
-              <div class="ticket-addon__price">+€450</div>
+              <div class="ticket-addon__price">+€690</div>
             </div>
           </div>
 
-          <a href="mailto:info@eversee.com?subject=EVERSEE%20Badge%20—%20Immersive%20Forum&body=Hi%2C%0A%0AI'd%20like%20to%20reserve%20an%20Immersive%20Forum%20badge%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0AName%3A%20%0ACompany%3A%20%0A%0AThank%20you!" class="btn btn--accent ticket-card__cta" data-cursor-hover>Get ticket</a>
+          <div class="ticket-card__total">
+            <span class="ticket-card__total-label">Total</span>
+            <span class="ticket-card__total-amount">€700</span>
+          </div>
+          <button class="btn btn--accent ticket-card__cta" data-cursor-hover data-base="700" data-ticket="Creative Summit (Companies & Agencies)">Get ticket</button>
         </div>
 
       </div>
@@ -459,7 +459,7 @@
       <!-- Corporate -->
       <div class="tickets__aside" data-reveal>
         <div class="tickets__aside-text"><strong>Bringing a team of 3+?</strong> Custom composition, brand visibility, priority curation.</div>
-        <a href="mailto:info@eversee.com?subject=EVERSEE%20Corporate%20Package&body=Hi%2C%0A%0AWe're%20interested%20in%20a%20Corporate%20package%20for%20EVERSEE%20Creative%20Forum%20(Berlin%2C%20June%202026).%0A%0ACompany%3A%20%0ATeam%20size%3A%20%0A%0AThank%20you!" class="btn btn--outline" data-cursor-hover>Contact us</a>
+        <a href="mailto:info@eversee.com?subject=EVERSEE%20Corporate%20Package&body=Hi%2C%0A%0AWe're%20interested%20in%20a%20Corporate%20package%20for%20EVERSEE%20Creative%20Summit%20(Berlin%2C%20June%202026).%0A%0ACompany%3A%20%0ATeam%20size%3A%20%0A%0AThank%20you!" class="btn btn--outline" data-cursor-hover>Contact us</a>
       </div>
     </div>
   </section>
@@ -472,11 +472,11 @@
       <div class="waitlist__inner" data-reveal>
         <h2 class="waitlist__title">Not ready to buy?</h2>
         <p class="waitlist__sub">Join the waitlist. We'll send you updates on speakers, venue, and early bird deadlines.</p>
-        <!-- TODO: replace with Mailchimp / ConvertKit / Buttondown embed when ready -->
-        <form class="waitlist__form" action="mailto:info@eversee.com?subject=EVERSEE%20Waitlist" method="POST" enctype="text/plain">
-          <input type="email" class="waitlist__input" placeholder="Your email" required>
+        <form class="waitlist__form" id="waitlistForm" action="https://formspree.io/f/mkovlbqy" method="POST">
+          <input type="email" name="email" class="waitlist__input" placeholder="Your email" required>
           <button type="submit" class="btn btn--accent waitlist__btn" data-cursor-hover>Join waitlist</button>
         </form>
+        <p class="waitlist__thanks" id="waitlistThanks" style="display:none;">Thank you! We'll keep you posted.</p>
       </div>
     </div>
   </section>
@@ -542,7 +542,7 @@
             <span>Is this a conference?</span>
             <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq__answer"><p>No. It's an application-based brainstorm forum. No keynote marathons, no expo booths. You work in mixed teams, solve real creative briefs, and meet decision-makers in structured speed matching sessions.</p></div>
+          <div class="faq__answer"><p>No. It's an application-based brainstorm summit. No keynote marathons, no expo booths. You work in mixed teams, solve real creative briefs, and meet decision-makers in structured speed matching sessions.</p></div>
         </div>
 
         <div class="faq__item">
@@ -551,6 +551,14 @@
             <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="faq__answer"><p>Show directors, circus creators, ceremony designers, artistic directors — alongside technology companies building tools for live entertainment. We review applications to ensure the right mix of tech and creative professionals.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" data-cursor-hover>
+            <span>What about accommodation?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__answer"><p>We're finalising a partner hotel rate near the venue. Drop us a line at <a href="mailto:info@eversee.com">info@eversee.com</a> and we'll send you the details once confirmed.</p></div>
         </div>
 
       </div>
@@ -566,6 +574,10 @@
         <div class="footer__col">
           <p class="footer__logo">EVERSEE</p>
           <p class="footer__copy">&copy; EVERSEE, 2026</p>
+          <div class="footer__legal">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
         </div>
         <div class="footer__col">
           <p class="footer__label">Get in touch</p>
@@ -587,6 +599,6 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260302"></script>
 </body>
 </html>

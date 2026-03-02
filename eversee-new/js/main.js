@@ -154,6 +154,111 @@
     });
   }
 
+  // --- Ticket addons: select, sum, build email ---
+  function initTicketAddons() {
+    document.querySelectorAll('.ticket-card').forEach(function (card) {
+      var addons = card.querySelectorAll('.ticket-addon');
+      var totalEl = card.querySelector('.ticket-card__total-amount');
+      var ctaBtn = card.querySelector('.ticket-card__cta');
+      if (!ctaBtn || !totalEl) return;
+
+      var base = parseInt(ctaBtn.dataset.base);
+      var ticketName = ctaBtn.dataset.ticket;
+
+      addons.forEach(function (el) {
+        el.addEventListener('click', function () {
+          var isBundle = el.dataset.bundle === 'true';
+
+          if (isBundle) {
+            var wasSelected = el.classList.contains('selected');
+            addons.forEach(function (a) { a.classList.remove('selected'); });
+            if (!wasSelected) el.classList.add('selected');
+          } else {
+            var bundle = card.querySelector('.ticket-addon--bundle');
+            if (bundle) bundle.classList.remove('selected');
+            el.classList.toggle('selected');
+          }
+
+          // Update total
+          var sum = base;
+          card.querySelectorAll('.ticket-addon.selected').forEach(function (s) {
+            sum += parseInt(s.dataset.price);
+          });
+          totalEl.textContent = '€' + sum;
+        });
+      });
+
+      ctaBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var selected = [];
+        card.querySelectorAll('.ticket-addon.selected').forEach(function (s) {
+          selected.push(s.dataset.name + ' (+\u20AC' + s.dataset.price + ')');
+        });
+
+        var lines = [
+          'Hi,',
+          '',
+          "I'd like to reserve a " + ticketName + ' badge for EVERSEE Creative Summit (Berlin, June 2026).',
+          '',
+          'Ticket: ' + ticketName + ' — \u20AC' + base
+        ];
+
+        if (selected.length > 0) {
+          lines.push('');
+          lines.push('Selected add-ons:');
+          selected.forEach(function (s) { lines.push('  \u2022 ' + s); });
+          lines.push('');
+          lines.push('Total: ' + totalEl.textContent);
+        }
+
+        lines.push('');
+        lines.push('Name: ');
+        lines.push('Position: ');
+        lines.push('Company: ');
+        lines.push('Number of tickets: ');
+        lines.push('');
+        lines.push('Thank you!');
+
+        var body = lines.join('\n');
+        var subject = 'EVERSEE Badge \u2014 ' + ticketName;
+        var href = 'mailto:info@eversee.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        var a = document.createElement('a');
+        a.href = href;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+    });
+  }
+
+  // --- Waitlist form (Formspree AJAX) ---
+  function initWaitlist() {
+    var form = document.getElementById('waitlistForm');
+    var thanks = document.getElementById('waitlistThanks');
+    if (!form || !thanks) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          thanks.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(function () {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  }
+
   // --- Init ---
   document.addEventListener('DOMContentLoaded', function () {
     initCursor();
@@ -162,5 +267,7 @@
     initCountdown();
     initFaq();
     initReveal();
+    initTicketAddons();
+    initWaitlist();
   });
 })();
