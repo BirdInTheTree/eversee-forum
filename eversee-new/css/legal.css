@@ -1,0 +1,62 @@
+/* Shared styles for Impressum & Datenschutz pages */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/syne-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+}
+:root {
+  --bg: #0a0a0f;
+  --text: #e8e8e8;
+  --dim: #999;
+  --accent: #FF2883;
+  --head: 'Syne', sans-serif;
+  --body: 'Plus Jakarta Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+.back {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--dim);
+  margin-bottom: 32px;
+}
+h1 {
+  font-family: var(--head);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+h2 {
+  font-family: var(--head);
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+p, ul { margin-bottom: 16px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
+.dim { color: var(--dim); }

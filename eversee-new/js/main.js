@@ -84,7 +84,7 @@
 
   // --- Countdown timer ---
   // June 1, 2026, 10:00 Berlin time (CEST = UTC+2)
-  var EVENT_DATE = new Date('2026-06-01T10:00:00+02:00').getTime();
+  var EVENT_DATE = new Date('2026-06-11T10:00:00+02:00').getTime();
 
   function initCountdown() {
     var daysEl = document.getElementById('cdDays');
@@ -95,6 +95,8 @@
 
     function pad(n) { return n < 10 ? '0' + n : String(n); }
 
+    var timerId = null;
+
     function tick() {
       var diff = EVENT_DATE - Date.now();
       if (diff <= 0) {
@@ -102,6 +104,7 @@
         hoursEl.textContent = '00';
         minsEl.textContent = '00';
         secsEl.textContent = '00';
+        if (timerId) { clearInterval(timerId); timerId = null; }
         return;
       }
       var days = Math.floor(diff / 86400000);
@@ -116,7 +119,7 @@
     }
 
     tick();
-    setInterval(tick, 1000);
+    timerId = setInterval(tick, 1000);
   }
 
   // --- FAQ accordion ---
@@ -131,12 +134,20 @@
         document.querySelectorAll('.faq__item--open').forEach(function (openItem) {
           openItem.classList.remove('faq__item--open');
           openItem.querySelector('.faq__answer').style.maxHeight = '0';
+          openItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
         });
 
         // Toggle current
         if (!isOpen) {
           item.classList.add('faq__item--open');
           answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+          // GA4: track FAQ expand
+          if (typeof gtag === 'function') {
+            gtag('event', 'faq_expand', {
+              question: btn.querySelector('span').textContent
+            });
+          }
         }
       });
     });
@@ -169,6 +180,13 @@
         el.addEventListener('click', function () {
           var isBundle = el.dataset.bundle === 'true';
 
+          // GA4: track addon selection
+          if (typeof gtag === 'function') {
+            gtag('event', 'addon_select', {
+              addon_name: el.dataset.name,
+              addon_price: el.dataset.price
+            });
+          }
           if (isBundle) {
             var wasSelected = el.classList.contains('selected');
             addons.forEach(function (a) { a.classList.remove('selected'); });
@@ -190,6 +208,13 @@
 
       ctaBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        // GA4: track ticket click
+        if (typeof gtag === 'function') {
+          gtag('event', 'ticket_email_click', {
+            ticket_type: ticketName,
+            value: parseInt(totalEl.textContent.replace(/[^0-9]/g, ''))
+          });
+        }
         var selected = [];
         card.querySelectorAll('.ticket-addon.selected').forEach(function (s) {
           selected.push(s.dataset.name + ' (+\u20AC' + s.dataset.price + ')');
@@ -250,11 +275,49 @@
         if (res.ok) {
           form.style.display = 'none';
           thanks.style.display = 'block';
+          // GA4: track waitlist signup
+          if (typeof gtag === 'function') {
+            gtag('event', 'waitlist_signup');
+          }
         } else {
           alert('Something went wrong. Please try again.');
         }
       }).catch(function () {
         alert('Something went wrong. Please try again.');
+      });
+    });
+  }
+
+  // --- GA4 event tracking for links and CTAs ---
+  function initGA4Tracking() {
+    if (typeof gtag !== 'function') return;
+
+    // Social link clicks (footer)
+    document.querySelectorAll('.footer__socials a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        gtag('event', 'social_click', {
+          platform: a.textContent.trim().toLowerCase()
+        });
+      });
+    });
+
+    // Corporate package inquiry
+    var corpBtn = document.querySelector('a[href^="mailto:"][href*="Corporate"]');
+    if (corpBtn) {
+      corpBtn.addEventListener('click', function () {
+        gtag('event', 'corporate_inquiry');
+      });
+    }
+
+    // Hero & nav CTA clicks ("Get Your Badge")
+    document.querySelectorAll('.hero__cta, .nav__cta, .mobile-menu__cta').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var location = btn.classList.contains('hero__cta') ? 'hero'
+          : btn.classList.contains('nav__cta') ? 'nav' : 'mobile_menu';
+        gtag('event', 'cta_click', {
+          cta_text: btn.textContent.trim(),
+          cta_location: location
+        });
       });
     });
   }
@@ -269,5 +332,6 @@
     initReveal();
     initTicketAddons();
     initWaitlist();
+    initGA4Tracking();
   });
 })();
