@@ -29,7 +29,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'sha256-IipGlr8T9POxMZJdTufNcMoAHHJag/+cNleA2rfio6Y=' 'sha256-sdy2j8PZ30+OXQLFQSfGaalxAAOyKbhZJtaonER8jxY=' 'sha256-r9BKfov5/HH1xoWuLFe9rq2EFqjwqR8pE/L0JwVRqxA=' 'sha256-6Y5qHMWbdpqq+Xv7z9SX8kH0fyJp1EK2iSb1wmsFThY=' 'sha256-P2SEgHJH2BAiffxBTARcjwWKPT5scDp2Yfy5xMZtKxs='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com; media-src 'self'; font-src 'self'; connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com 'sha256-yQKDJuxKP55/PxHHnbDz2vF6fZ3QNZaxWlyC0mCCZwU=' 'sha256-9IX385haqvLYO368FG8o3xeHKIgsMREvqZzHPUAOvLg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com; media-src 'self'; font-src 'self'; connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self';">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css?v=20260302">
@@ -241,14 +241,19 @@
   <div class="cookie-banner" id="cookieBanner">
     <p class="cookie-banner__text">We use cookies for analytics to understand how visitors use our site. <a href="datenschutz.html">Privacy policy</a></p>
     <div class="cookie-banner__actions">
-      <button class="cookie-banner__btn cookie-banner__btn--accept" onclick="acceptCookies()">Accept</button>
-      <button class="cookie-banner__btn cookie-banner__btn--decline" onclick="declineCookies()">Decline</button>
+      <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accept</button>
+      <button class="cookie-banner__btn cookie-banner__btn--decline" id="cookieDecline">Decline</button>
     </div>
   </div>
   <script>
-    if (localStorage.getItem('cookie_consent')) {
-      document.getElementById('cookieBanner').style.display = 'none';
-    }
+    (function() {
+      var banner = document.getElementById('cookieBanner');
+      if (localStorage.getItem('cookie_consent')) {
+        banner.style.display = 'none';
+      }
+      document.getElementById('cookieAccept').addEventListener('click', function() { acceptCookies(); });
+      document.getElementById('cookieDecline').addEventListener('click', function() { declineCookies(); });
+    })();
   </script>
 
   <!-- Skip Navigation -->
@@ -294,7 +299,7 @@
        ============================================ -->
   <section class="hero" id="hero">
     <div class="hero__video-wrap">
-      <video class="hero__video" autoplay muted loop playsinline poster="poster.jpg">
+      <video class="hero__video" autoplay muted loop playsinline poster="poster.jpg" onloadedmetadata="this.playbackRate=0.4">
         <source src="eversee_hero.webm" type="video/webm">
         <source src="eversee_hero.mp4" type="video/mp4">
       </video>
@@ -304,7 +309,7 @@
       <div class="hero__logo-cover"></div>
     </div>
     <div class="hero__content">
-      <p class="hero__eyebrow" data-reveal>Berlin · June 2026</p>
+      <p class="hero__eyebrow" data-reveal>Berlin · 11–13 June 2026</p>
       <h1 class="hero__title" data-reveal>EVERSEE<br><em>Creative Summit</em></h1>
       <p class="hero__tagline" data-reveal>Invite-only. 3 days. Zero PowerPoint.</p>
       <div class="hero__countdown" id="countdown" data-reveal>
@@ -602,7 +607,7 @@
           <ul class="ticket-card__features">
             <li class="ticket-card__feature ticket-card__feature--on">Keynotes, brainstorms & strategy session — 3 days</li>
             <li class="ticket-card__feature ticket-card__feature--on">Speed Matching — direct access to 10 pre-selected creatives</li>
-            <li class="ticket-card__feature ticket-card__feature--highlight">Backstage Tour — Friedrichstadt-Palast <span class="tag">Max 40</span></li>
+            <li class="ticket-card__feature ticket-card__feature--highlight">Backstage Tour — Friedrichstadt-Palast <span class="tag">Max 40 pers</span></li>
             <li class="ticket-card__feature ticket-card__feature--on">Coffee & refreshments</li>
           </ul>
 
@@ -804,7 +809,7 @@
           <p class="organizers__text">Since 2015, we've been running the creative industry forum (formerly Show Your Show) — bringing together the people who build the shows and the people who build the tools. The Creative Summit is our most focused format yet: a small, curated group working on real problems instead of watching presentations.</p>
         </div>
         <div class="organizers__founder">
-          <img class="organizers__photo" src="artem-badalyan.jpg" alt="Artem Badalyan on stage" width="400" height="267" loading="lazy">
+          <img class="organizers__photo" src="artem-badalyan.jpg" alt="Artem Badalyan on stage" loading="lazy">
           <h3 class="organizers__name">Artem Badalyan</h3>
           <p class="organizers__role">Founder & CEO, Eversee GmbH</p>
           <p class="organizers__bio">Creative producer with over 30 years of international experience in live entertainment and show production. Worked with Cirque du Soleil and Dragone. Bridges art and technology to deliver immersive experiences across global markets.</p>

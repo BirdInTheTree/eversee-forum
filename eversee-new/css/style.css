@@ -1,6 +1,6 @@
 /* ============================================
-   EVERSEE Creative Forum — Landing Page
-   Brand: hot pink + deep purple, Syne + Plus Jakarta Sans
+   EVERSEE Creative Summit — Landing Page
+   Brand: gold + black, Helvetica Neue / system sans
    ============================================ */
 
 /* Self-hosted Google Fonts (DSGVO-compliant, no external requests) */
@@ -40,40 +40,40 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* Brand colors */
-  --accent: #FF2883;
-  --accent-hover: #ff4d9a;
-  --gradient-start: #E91A83;
-  --gradient-end: #4C24C1;
+  /* Brand colors — gold */
+  --accent: #c9a96e;
+  --accent-hover: #d4b87d;
+  --gradient-start: #c9a96e;
+  --gradient-end: #8a7340;
 
   /* Backgrounds */
-  --bg: #0d0d0d;
+  --bg: #080808;
   --bg-card: #0f0f0f;
-  --bg-section: #17112B;
-  --bg-section-light: #35244A;
+  --bg-section: #0a0a0a;
+  --bg-section-light: #141414;
 
   /* Text — high contrast on dark backgrounds */
   --text: #ffffff;
-  --dim: #d0d0d0;
-  --muted: #b0b0b0;
-  --faint: #808080;
+  --dim: #cccccc;
+  --muted: #888888;
+  --faint: #555555;
 
   /* Borders */
-  --border: #1e1e2e;
-  --border-hover: #3a3a4e;
+  --border: #1a1a1a;
+  --border-hover: #2e2e2e;
 
   /* Lighter accent for small text on dark backgrounds (AA contrast) */
-  --accent-text: #FF5CA0;
+  --accent-text: #d4b87d;
 
   /* Accent-derived */
-  --accent-bg: rgba(255,40,131,0.06);
-  --accent-border: rgba(255,40,131,0.25);
-  --accent-border-hover: rgba(255,40,131,0.5);
-  --accent-badge: rgba(255,40,131,0.12);
+  --accent-bg: rgba(201,169,110,0.05);
+  --accent-border: rgba(201,169,110,0.25);
+  --accent-border-hover: rgba(201,169,110,0.5);
+  --accent-badge: rgba(201,169,110,0.12);
 
   /* Typography */
-  --head: 'Syne', sans-serif;
-  --body: 'Plus Jakarta Sans', sans-serif;
+  --head: 'Helvetica Neue', 'Arial', sans-serif;
+  --body: 'Helvetica Neue', 'Arial', sans-serif;
 
   --ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -89,6 +89,9 @@ html.lenis, html.lenis body { height: auto; }
 
 body {
   font-family: var(--body);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -98,7 +101,7 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; border: none; background: none; }
 img { display: block; max-width: 100%; }
-::selection { background: rgba(255,40,131,0.3); }
+::selection { background: rgba(201,169,110,0.3); }
 
 /* Screen-reader only */
 .sr-only {
@@ -223,10 +226,13 @@ a:focus-visible {
   min-width: 44px;
 }
 .btn--accent {
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 4px 24px rgba(255,40,131,0.25);
+  background: var(--accent);
+  color: #000;
+  font-weight: 500;
+  box-shadow: 0 4px 24px rgba(201,169,110,0.25);
+}
+.btn--accent:hover {
+  background: var(--accent-hover);
 }
 .btn--outline {
   border: 1px solid var(--border);
@@ -273,10 +279,10 @@ a:focus-visible {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 10px 24px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  color: #fff;
+  background: var(--accent);
+  color: #000;
   border-radius: 100px;
-  font-weight: 600;
+  font-weight: 500;
   transition: box-shadow 0.2s, transform 0.2s;
   min-height: 44px;
   display: flex;
@@ -346,8 +352,8 @@ a:focus-visible {
 .mobile-menu__cta {
   margin-top: 12px;
   padding: 14px 40px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
-  color: #fff !important;
+  background: var(--accent) !important;
+  color: #000 !important;
   border-radius: 10px;
   font-size: 16px !important;
 }
@@ -408,23 +414,20 @@ a:focus-visible {
   font-size: 15px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--dim);
+  color: #fff;
   margin-bottom: 20px;
 }
 .hero__title {
   font-family: var(--head);
   font-size: clamp(42px, 8vw, 96px);
-  font-weight: 700;
+  font-weight: 200;
   line-height: 1;
   letter-spacing: -2px;
   margin-bottom: 20px;
 }
 .hero__title em {
   font-style: normal;
-  background: linear-gradient(135deg, #FF2883, #c45aff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .hero__tagline {
   font-size: clamp(18px, 2.5vw, 24px);
@@ -561,7 +564,7 @@ a:focus-visible {
 .section-title {
   font-family: var(--head);
   font-size: clamp(32px, 5vw, 48px);
-  font-weight: 600;
+  font-weight: 200;
   letter-spacing: -1px;
   text-align: center;
   margin-bottom: 56px;
@@ -601,7 +604,7 @@ a:focus-visible {
   font-size: 20px;
   font-weight: 700;
   color: var(--accent);
-  background: rgba(255,40,131,0.06);
+  background: rgba(201,169,110,0.05);
   flex-shrink: 0;
 }
 .timeline__line {
@@ -623,7 +626,7 @@ a:focus-visible {
 .timeline__name {
   font-family: var(--head);
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: -0.5px;
   margin-bottom: 4px;
 }
@@ -659,8 +662,8 @@ a:focus-visible {
 .timeline__evening {
   padding: 16px 20px;
   border-radius: 10px;
-  background: rgba(255,40,131,0.04);
-  border: 1px solid rgba(255,40,131,0.1);
+  background: rgba(201,169,110,0.04);
+  border: 1px solid rgba(201,169,110,0.1);
 }
 .timeline__evening-label {
   font-size: 12px;
@@ -936,12 +939,12 @@ a:focus-visible {
 .ticket-card__feature--on { color: #ddd; }
 .ticket-card__feature--on::before {
   border-color: var(--accent);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8l2 2 4-4' stroke='%23FF2883' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8l2 2 4-4' stroke='%23c9a96e' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .ticket-card__feature--highlight { color: var(--accent); }
 .ticket-card__feature--highlight::before {
   border-color: var(--accent);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8l2 2 4-4' stroke='%23FF2883' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8l2 2 4-4' stroke='%23c9a96e' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .tag {
   display: inline-block;
@@ -1002,7 +1005,7 @@ a:focus-visible {
   user-select: none;
   transition: border-color 0.15s, background 0.15s;
 }
-.ticket-addon.selected { border-color: var(--accent); background: rgba(255,40,131,0.06); }
+.ticket-addon.selected { border-color: var(--accent); background: rgba(201,169,110,0.05); }
 .ticket-addon__check {
   width: 20px; height: 20px;
   border: 2px solid #444;
@@ -1049,7 +1052,7 @@ a:focus-visible {
 }
 .ticket-addon--bundle {
   border: 2px solid var(--accent);
-  background: rgba(255,40,131,0.08);
+  background: rgba(201,169,110,0.08);
   margin-top: 10px;
   padding: 12px 14px;
 }
@@ -1261,10 +1264,12 @@ a:focus-visible {
   background: rgba(15,15,15,0.6);
 }
 img.organizers__photo {
+  display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
+  aspect-ratio: 3/2;
   border-radius: 12px;
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
   object-fit: cover;
 }
 .organizers__name {
@@ -1281,7 +1286,7 @@ img.organizers__photo {
   margin-bottom: 16px;
 }
 .organizers__bio {
-  font-size: 16px;
+  font-size: 20px;
   color: var(--dim);
   line-height: 1.6;
 }
@@ -1422,7 +1427,7 @@ img.organizers__photo {
   .ticket-addon:hover { border-color: #444; }
   .nav__link:hover { color: var(--text); }
   .btn--accent:hover {
-    box-shadow: 0 6px 32px rgba(255,40,131,0.4);
+    box-shadow: 0 6px 32px rgba(201,169,110,0.4);
     transform: translateY(-1px);
   }
   .btn--outline:hover {
@@ -1430,7 +1435,7 @@ img.organizers__photo {
     color: var(--text);
   }
   .nav__cta:hover {
-    box-shadow: 0 4px 20px rgba(255,40,131,0.3);
+    box-shadow: 0 4px 20px rgba(201,169,110,0.3);
     transform: translateY(-1px);
   }
   .mobile-menu__nav a:hover { color: var(--text); }

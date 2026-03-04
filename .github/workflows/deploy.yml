@@ -1,0 +1,25 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'eversee-new/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./eversee-new/
+          server-dir: /eversee-new/
