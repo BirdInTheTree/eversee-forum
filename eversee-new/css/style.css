@@ -414,7 +414,7 @@ a:focus-visible {
   font-size: 15px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 20px;
 }
 .hero__title {
@@ -432,7 +432,7 @@ a:focus-visible {
 .hero__tagline {
   font-size: clamp(18px, 2.5vw, 24px);
   font-weight: 400;
-  color: var(--text);
+  color: #fff;
   margin-bottom: 40px;
   letter-spacing: 0.5px;
 }
