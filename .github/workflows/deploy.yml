@@ -14,12 +14,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: ./eversee-new/
-          server-dir: /eversee-new/
+          local_path: './eversee-new/*'
+          remote_path: '/eversee-new/'
+          sftp_only: true
