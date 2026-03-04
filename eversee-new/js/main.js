@@ -223,7 +223,7 @@
         var lines = [
           'Hi,',
           '',
-          "I'd like to reserve a " + ticketName + ' badge for EVERSEE Creative Summit (Berlin, June 2026).',
+          "I'd like to reserve a " + ticketName + ' badge for EVERSEE Creative Summit (Berlin, 11–13 June 2026).',
           '',
           'Ticket: ' + ticketName + ' — \u20AC' + base
         ];
@@ -240,6 +240,10 @@
         lines.push('Name: ');
         lines.push('Position: ');
         lines.push('Company: ');
+        if (ticketName.toLowerCase().indexOf('companies') !== -1) {
+          lines.push('Company address: ');
+          lines.push('VAT number: ');
+        }
         lines.push('Number of tickets: ');
         lines.push('');
         lines.push('Thank you!');
