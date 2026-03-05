@@ -12,5 +12,11 @@ carousel/
 *.mov
 *.rtfd
 
+# Screenshots
+Screenshot *.png
+
+# Kaushik newsletter archive (134 parsed emails, large)
+docs/md/kaushik/
+
 # OS
 .DS_Store
