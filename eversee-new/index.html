@@ -859,11 +859,40 @@
     </div>
   </footer>
 
+  <!-- Ticket fallback modal (shown when mailto: fails) -->
+  <div class="ticket-modal" id="ticketModal">
+    <div class="ticket-modal__backdrop"></div>
+    <div class="ticket-modal__box">
+      <button class="ticket-modal__close" id="ticketModalClose">&times;</button>
+      <h3 class="ticket-modal__title">Request a ticket</h3>
+      <p class="ticket-modal__subtitle" id="ticketModalInfo"></p>
+      <form class="ticket-modal__form" id="ticketModalForm" action="https://formspree.io/f/maqpwwva" method="POST">
+        <input type="hidden" name="_subject" id="tmSubject">
+        <input type="hidden" name="ticket" id="tmTicket">
+        <input type="hidden" name="addons" id="tmAddons">
+        <input type="hidden" name="total" id="tmTotal">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="text" name="position" placeholder="Position">
+        <input type="text" name="company" placeholder="Company" required>
+        <div class="ticket-modal__corp" id="tmCorpFields" style="display:none">
+          <input type="text" name="company_address" placeholder="Company address">
+          <input type="text" name="vat_number" placeholder="VAT number">
+        </div>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="number_of_tickets" placeholder="Number of tickets" min="1" value="1">
+        <button type="submit" class="btn btn--accent">Send request</button>
+      </form>
+      <div class="ticket-modal__thanks" id="ticketModalThanks" style="display:none">
+        <p>Thank you! We'll get back to you shortly.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js" integrity="sha384-4EgXbGZLDwcPHcRGrHOxm1OvumWUqhr/ts6eapdZnak6ORZAsSE3fMd0niykaSkw" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js" integrity="sha384-xNHNOfrykny9oFwnmpfNbkSc6isny38d1GZvTRVuFV0l9fTMIZKhULvomyQJSMRl" crossorigin="anonymous"></script>
-  <script defer src="js/main.js?v=20260302"></script>
+  <script defer src="js/main.js?v=20260305"></script>
   <script>
     // Slow down hero video in the last 25%, creating a smooth deceleration before loop
     (function() {

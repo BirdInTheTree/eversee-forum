@@ -1401,6 +1401,83 @@ img.organizers__photo {
 }
 
 /* ============================================
+   Ticket Fallback Modal
+   ============================================ */
+.ticket-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.ticket-modal.is-open {
+  display: flex;
+}
+.ticket-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.ticket-modal__box {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.ticket-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  color: var(--dim);
+  cursor: pointer;
+  line-height: 1;
+}
+.ticket-modal__title {
+  font-family: var(--head);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.ticket-modal__subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.ticket-modal__form input {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 15px;
+}
+.ticket-modal__form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.ticket-modal__form .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+.ticket-modal__thanks p {
+  text-align: center;
+  font-size: 18px;
+  color: var(--accent);
+  padding: 40px 0;
+}
+
+/* ============================================
    Scroll Reveal
    ============================================ */
 [data-reveal] {

@@ -250,15 +250,81 @@
 
         var body = lines.join('\n');
         var subject = 'EVERSEE Badge \u2014 ' + ticketName;
+        var addonsText = selected.join(', ') || 'None';
+        var totalText = totalEl.textContent;
+
+        // Try mailto first, fall back to form if it doesn't open
         var href = 'mailto:info@eversee.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        var a = document.createElement('a');
-        a.href = href;
-        a.target = '_blank';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        var didLeave = false;
+
+        function onBlur() { didLeave = true; }
+        window.addEventListener('blur', onBlur);
+
+        window.location.href = href;
+
+        setTimeout(function () {
+          window.removeEventListener('blur', onBlur);
+          if (!didLeave) {
+            showTicketModal(subject, ticketName, addonsText, totalText, base);
+          }
+        }, 1500);
       });
     });
+  }
+
+  // --- Ticket fallback modal ---
+  function showTicketModal(subject, ticketName, addonsText, totalText, base) {
+    var modal = document.getElementById('ticketModal');
+    var form = document.getElementById('ticketModalForm');
+    var thanks = document.getElementById('ticketModalThanks');
+    var closeBtn = document.getElementById('ticketModalClose');
+    var backdrop = modal.querySelector('.ticket-modal__backdrop');
+    if (!modal) return;
+
+    document.getElementById('tmSubject').value = subject;
+    document.getElementById('tmTicket').value = ticketName + ' — \u20AC' + base;
+    document.getElementById('tmAddons').value = addonsText;
+    document.getElementById('tmTotal').value = totalText;
+    document.getElementById('ticketModalInfo').textContent = ticketName + ' — ' + totalText;
+
+    // Show corporate fields if needed
+    var corpFields = document.getElementById('tmCorpFields');
+    corpFields.style.display = ticketName.toLowerCase().indexOf('companies') !== -1 ? 'block' : 'none';
+
+    form.style.display = 'block';
+    thanks.style.display = 'none';
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.onclick = closeModal;
+    backdrop.onclick = closeModal;
+
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          thanks.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'ticket_form_submit', { ticket_type: ticketName });
+          }
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(function () {
+        alert('Something went wrong. Please try again.');
+      });
+    };
   }
 
   // --- Waitlist form (Formspree AJAX) ---
@@ -305,11 +371,28 @@
       });
     });
 
-    // Corporate package inquiry
+    // Corporate package inquiry — mailto with fallback
     var corpBtn = document.querySelector('a[href^="mailto:"][href*="Corporate"]');
     if (corpBtn) {
-      corpBtn.addEventListener('click', function () {
+      corpBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         gtag('event', 'corporate_inquiry');
+
+        var didLeave = false;
+        function onBlur() { didLeave = true; }
+        window.addEventListener('blur', onBlur);
+        window.location.href = corpBtn.href;
+
+        setTimeout(function () {
+          window.removeEventListener('blur', onBlur);
+          if (!didLeave) {
+            showTicketModal(
+              'EVERSEE Corporate Package',
+              'Creative Summit (Companies & Agencies)',
+              'None', '\u2014', 700
+            );
+          }
+        }, 1500);
       });
     }
 
@@ -323,6 +406,26 @@
           cta_location: location
         });
       });
+    });
+
+    // Scroll-based section views (fire once per pageload)
+    var observed = {};
+    var sections = [
+      { id: 'program', event: 'program_view' },
+      { id: 'tickets', event: 'scroll_to_tickets' }
+    ];
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !observed[entry.target.id]) {
+          observed[entry.target.id] = true;
+          var match = sections.find(function (s) { return s.id === entry.target.id; });
+          if (match) gtag('event', match.event);
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(function (s) {
+      var el = document.getElementById(s.id);
+      if (el) observer.observe(el);
     });
   }
 
